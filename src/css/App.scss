@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700;800&display=swap');
+
+$break-small: 516px;
+$break-large: 1366px;
+
+$color-primary: #FF0000;
+$color-secondary: #76d1fb;
+$color-error: #fdcfcf;
+$color-success: #9ff1ae;
+$gradient: linear-gradient($color-secondary, #FFFFFF);
+$font-stack: 'Poppins', sans-serif;
+$box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+
+@mixin alert($color) {
+    margin-top: 35px;
+    background-color: $color;
+    border: 1px solid darken($color, 10%);
+    color: darken($color, 50%);
+    padding: 20px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+@mixin position-center($top-percentage) {
+    position: absolute;
+    top: $top-percentage;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: $font-stack;
+}
+
+/* text-align helper classes */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* typography */
+
+h1 {
+    font-weight: 800;
+    font-size: 4em;
+    color: #000000;
+
+    &.small {
+        font-size: 2em;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: darken($color-secondary, 20%);
+
+    &:hover {
+        color: darken($color-secondary, 40%);
+    }
+}
+
+/* sign-up & sign-in form styles */
+
+.form-container {
+    background: $gradient;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.form-wrapper {
+    @include position-center(50%);
+    width: 90%;
+
+    @media screen and (min-width: $break-small) {
+        width: 60%;
+    }
+
+    @media screen and (min-width: $break-large) {
+        width: 40%;
+        max-width: 600px;
+    }
+
+    form {
+        width: 100%;
+        padding: 50px;
+        background-color: #FFF;   
+        box-shadow: $box-shadow;
+        text-align: center;
+    
+        input {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #000;
+            margin: 10px 0 35px 0;
+        }
+    
+        label {
+            display: block;
+            text-align: left;
+        }
+    
+        button {
+            background-color: #000;
+            border: none;
+            color: #FFF;
+            padding: 18px 60px;
+        }
+    
+        .error {
+           @include alert($color-error);
+        }
+    
+        .success {
+           @include alert($color-success);
+        }
+    }
+}
+
+.form-footer {
+    padding: 12px 0;
+}
+
+/* Landing Page */
+
+.logo {
+    background-color: #000000;
+    text-align: center;
+    padding: 25px 0;
+    width: 100px;
+
+    &.full {
+        width: 100%;
+    }
+
+    img {
+        width: 50px;
+    }
+}
+
+.landing-container {
+    padding: 5px;
+
+    @media screen and (min-width: $break-large) {
+        padding: 5px 40px;
+    }
+}
+
+.landing-wrapper {
+    height: 80vh;
+    background-image: url('../img/logo.png'), $gradient;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: auto;
+
+    /* landing page tagline */
+    .landing-tagline {
+        @include position-center(50%);
+        width: 100%;
+        
+        h2 {
+            font-weight: 600;
+            color: #000000;
+        }
+
+    }
+
+    /* landing page year */
+    .landing-year {
+        @include position-center(85%);
+        width: 100%;
+        
+        h1 {
+            font-weight: 700;
+            letter-spacing: 0.5em;
+        }
+
+        /* override odometer.js font style */
+        .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
+            font-family: $font-stack;
+        }
+    }
+}
+
+
+
+
+
+
+
+

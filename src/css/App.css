@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700;800&display=swap");
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* text-align helper classes */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* typography */
+h1 {
+  font-weight: 800;
+  font-size: 4em;
+  color: #000000;
+}
+
+h1.small {
+  font-size: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: #13b0f8;
+}
+
+a:hover {
+  color: #056fa0;
+}
+
+/* sign-up & sign-in form styles */
+.form-container {
+  background: -webkit-gradient(linear, left top, left bottom, from(#76d1fb), to(#FFFFFF));
+  background: linear-gradient(#76d1fb, #FFFFFF);
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.form-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+@media screen and (min-width: 516px) {
+  .form-wrapper {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .form-wrapper {
+    width: 40%;
+    max-width: 600px;
+  }
+}
+
+.form-wrapper form {
+  width: 100%;
+  padding: 50px;
+  background-color: #FFF;
+  -webkit-box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.form-wrapper form input {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #000;
+  margin: 10px 0 35px 0;
+}
+
+.form-wrapper form label {
+  display: block;
+  text-align: left;
+}
+
+.form-wrapper form button {
+  background-color: #000;
+  border: none;
+  color: #FFF;
+  padding: 18px 60px;
+}
+
+.form-wrapper form .error {
+  margin-top: 35px;
+  background-color: #fdcfcf;
+  border: 1px solid #fb9e9e;
+  color: #c50808;
+  padding: 20px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.form-wrapper form .success {
+  margin-top: 35px;
+  background-color: #9ff1ae;
+  border: 1px solid #72eb88;
+  color: #127f26;
+  padding: 20px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.form-footer {
+  padding: 12px 0;
+}
+
+/* Landing Page */
+.logo {
+  background-color: #000000;
+  text-align: center;
+  padding: 25px 0;
+  width: 100px;
+}
+
+.logo.full {
+  width: 100%;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.landing-container {
+  padding: 5px;
+}
+
+@media screen and (min-width: 1366px) {
+  .landing-container {
+    padding: 5px 40px;
+  }
+}
+
+.landing-wrapper {
+  height: 80vh;
+  background-image: url("../img/logo.png"), -webkit-gradient(linear, left top, left bottom, from(#76d1fb), to(#FFFFFF));
+  background-image: url("../img/logo.png"), linear-gradient(#76d1fb, #FFFFFF);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: auto;
+  /* landing page tagline */
+  /* landing page year */
+}
+
+.landing-wrapper .landing-tagline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.landing-wrapper .landing-tagline h2 {
+  font-weight: 600;
+  color: #000000;
+}
+
+.landing-wrapper .landing-year {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  /* override odometer.js font style */
+}
+
+.landing-wrapper .landing-year h1 {
+  font-weight: 700;
+  letter-spacing: 0.5em;
+}
+
+.landing-wrapper .landing-year .odometer.odometer-auto-theme, .landing-wrapper .landing-year .odometer.odometer-theme-default {
+  font-family: "Poppins", sans-serif;
+}
+/*# sourceMappingURL=App.css.map */
