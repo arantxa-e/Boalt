@@ -3,11 +3,13 @@
 $break-small: 516px;
 $break-large: 1366px;
 
-$color-primary: #FF0000;
-$color-secondary: #76d1fb;
+$color-red: #FF0000;
+$color-primary: #5AC8FA;
+$color-gray: #707070;
 $color-error: #fdcfcf;
 $color-success: #9ff1ae;
-$gradient: linear-gradient($color-secondary, #FFFFFF);
+$gradient-primary: linear-gradient($color-primary, #FFFFFF);
+$gradient-light: linear-gradient(to right, #F2F2F2, #FFFFFF);
 $font-stack: 'Poppins', sans-serif;
 $box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
 
@@ -34,11 +36,15 @@ $box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
 }
 
 body {
-    font-size: 16px;
+    font-size: 13px;
     font-family: $font-stack;
+
+    @media screen and (min-width: $break-small) {
+        font-size: 16px;
+    }
 }
 
-/* text-align helper classes */
+/* helper classes */
 
 .text-center {
     text-align: center;
@@ -48,11 +54,24 @@ body {
     text-align: right;
 }
 
+.grid-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-col {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+
 /* typography */
 
 h1 {
     font-weight: 800;
-    font-size: 4em;
+    font-size: 5em;
     color: #000000;
 
     &.small {
@@ -62,17 +81,17 @@ h1 {
 
 a {
     text-decoration: none;
-    color: darken($color-secondary, 20%);
+    color: darken($color-primary, 10%);
 
     &:hover {
-        color: darken($color-secondary, 40%);
+        color: darken($color-primary, 20%);
     }
 }
 
 /* sign-up & sign-in form styles */
 
 .form-container {
-    background: $gradient;
+    background: $gradient-primary;
     height: 100vh;
     width: 100%;
     position: relative;
@@ -134,20 +153,7 @@ a {
 
 /* Landing Page */
 
-.logo {
-    background-color: #000000;
-    text-align: center;
-    padding: 25px 0;
-    width: 100px;
 
-    &.full {
-        width: 100%;
-    }
-
-    img {
-        width: 50px;
-    }
-}
 
 .landing-container {
     padding: 5px;
@@ -159,7 +165,7 @@ a {
 
 .landing-wrapper {
     height: 80vh;
-    background-image: url('../img/logo.png'), $gradient;
+    background-image: url('../img/logo.png'), $gradient-primary;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
@@ -194,8 +200,137 @@ a {
     }
 }
 
+/* Navbar */
+
+.logo {
+    background-color: #000000;
+    text-align: center;
+    height: 60px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    &.full {
+        width: 100%;
+
+    }
+
+    @media screen and (min-width: $break-small) {
+        width: 100px;
+        height: 100px;
+    }
+
+    img {
+        width: 40px;
+
+        @media screen and (min-width: $break-small) {
+            width: 50px;
+        }
+    }
+}
+
+.nav-logo {
+    display: flex;
+}
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1em;
 
 
+    @media screen and (min-width: $break-small) {
+        font-size: 1.2em;
+        padding-right: 100px;
+    }
+    
+    a {
+        color: $color-gray;
+        margin-right: 10px;
+
+        @media screen and (min-width: $break-small) {
+            margin-right: 60px;
+        }
+        
+
+        &:hover {
+            color: darken($color-gray, 20%)
+        }
+
+        &.focus {
+            font-weight: 700;
+            color: #000000;
+        }
+    }
+
+    .cta {
+        border-radius: 25px;
+        padding: 10px 25px;
+        background-color: $color-primary;
+        color: #FFF;
+        font-weight: 600;
+        border: none;
+
+        &:hover {
+            background-color: darken($color-primary, 10%);
+            cursor: pointer;
+        }
+    }
+}
+
+/* Product Icons */
+.product-icons {
+    img {
+        margin-right: 40px;
+        height: 30px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+/* Welcome */
+
+.nav-col {
+    height: 60px;
+
+    @media screen and (min-width: $break-small) {
+        height: 100px;
+    }
+}
+
+.content-col {
+    flex: 1;
+    background: $gradient-light;
+
+    @media screen and (min-width: $break-small) {
+        margin-left: 100px;
+    }
+}
+
+.gutter {
+    flex: 0 0 100px;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+.content {
+    @include position-center(50%);
+}
+
+.product-link {
+    @include position-center(65%);
+    font-weight: 600;
+}
+
+.product-icons-row {
+    @include position-center(80%);
+}
 
 
 
