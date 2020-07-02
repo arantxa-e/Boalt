@@ -5,7 +5,7 @@ import Logo from './Logo'
 const Navbar = (props) => {
     return (
         <nav>
-            <div className="grid-row">
+            <div className="flex-grid-row">
                 <div className="nav-logo">
                     <Link to="/landing">
                         <Logo size="icon" className={ props.size ? 'full' : null } />
@@ -13,7 +13,7 @@ const Navbar = (props) => {
                 </div>
                 
                 <div className="nav-links">
-                    <Link to="iphone">iPhone</Link>
+                    <Link to="iphone" className={ props.active === 'iphone' ? 'focus' : null }>iPhone</Link>
                     <Link to="macbook">MacBook Pro</Link>
                     <Link to="watch">Watch</Link>
                     <button className="cta">Notify Me</button>

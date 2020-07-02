@@ -1,11 +1,11 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
-import Odometer from 'react-odometerjs';
-import '../css/odometer-theme-default.css';
+import { Link } from 'react-router-dom'
+import Odometer from 'react-odometerjs'
+import '../css/odometer-theme-default.css'
 import Logo from '../components/Logo'
 
-const Landing = (props) => {
-
+const Landing = () => {
+    /* trigger odometer.js animation by transitioning the year from 1000 to 2019 */
     const [year, setYear] = useState(1000);
     useEffect(() => setYear(2019), []);
 
@@ -20,7 +20,6 @@ const Landing = (props) => {
                         </div>
                         <div className="landing-year">
                             <h1 className="text-center"><Odometer value={year} format="d" /></h1>
-            
                         </div>
                     </div>
                 </div>

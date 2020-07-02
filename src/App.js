@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import PrivateRoute from './PrivateRoute';
-import { UserContext } from './context/UserContext';
-import { AuthContext } from './context/AuthContext';
-import uniqid from 'uniqid';
-import './css/App.css';
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import PrivateRoute from './PrivateRoute'
+import { AnimatePresence, motion } from "framer-motion"
+import { UserContext } from './context/UserContext'
+import { AuthContext } from './context/AuthContext'
+import uniqid from 'uniqid'
+import './css/App.css'
 
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';

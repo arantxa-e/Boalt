@@ -25,7 +25,14 @@ body {
   text-align: right;
 }
 
-.grid-row {
+/* flexbox classes */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-grid-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,7 +42,7 @@ body {
           flex-direction: row;
 }
 
-.grid-col {
+.flex-grid-col {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,7 +53,13 @@ body {
   height: 100vh;
 }
 
-/* typography */
+.align-bottom {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+/* General Typography */
 h1 {
   font-weight: 800;
   font-size: 5em;
@@ -66,7 +79,7 @@ a:hover {
   color: #07a1e7;
 }
 
-/* sign-up & sign-in form styles */
+/* PAGE - signup & signin */
 .form-container {
   background: -webkit-gradient(linear, left top, left bottom, from(#5AC8FA), to(#FFFFFF));
   background: linear-gradient(#5AC8FA, #FFFFFF);
@@ -150,7 +163,7 @@ a:hover {
   padding: 12px 0;
 }
 
-/* Landing Page */
+/* PAGE - Landing */
 .landing-container {
   padding: 5px;
 }
@@ -199,14 +212,14 @@ a:hover {
 
 .landing-wrapper .landing-year h1 {
   font-weight: 700;
-  letter-spacing: 0.5em;
 }
 
 .landing-wrapper .landing-year .odometer.odometer-auto-theme, .landing-wrapper .landing-year .odometer.odometer-theme-default {
   font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5em;
 }
 
-/* Navbar */
+/* COMPONENT - Navbar */
 .logo {
   background-color: #000000;
   text-align: center;
@@ -305,45 +318,42 @@ a:hover {
   cursor: pointer;
 }
 
-/* Product Icons */
-.product-icons img {
+/* COMPONENT - Product Icons */
+.product-icons img, .product-icons a img {
   margin-right: 40px;
   height: 30px;
 }
 
-.product-icons img:last-of-type {
-  margin-right: 0;
+.product-icons {
+  margin-right: -40px;
 }
 
-/* Welcome */
-.nav-col {
+/* PAGE - Welcome */
+.col-nav {
   height: 60px;
 }
 
 @media screen and (min-width: 516px) {
-  .nav-col {
+  .col-nav {
     height: 100px;
   }
 }
 
-.content-col {
+.col-content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background: -webkit-gradient(linear, left top, right top, from(#F2F2F2), to(#FFFFFF));
-  background: linear-gradient(to right, #F2F2F2, #FFFFFF);
 }
 
 @media screen and (min-width: 516px) {
-  .content-col {
+  .col-content {
     margin-left: 100px;
   }
 }
 
-.gutter {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100px;
-          flex: 0 0 100px;
+.welcome-content {
+  background: -webkit-gradient(linear, left top, right top, from(#F2F2F2), to(#FFFFFF));
+  background: linear-gradient(to right, #F2F2F2, #FFFFFF);
 }
 
 .content-wrapper {
@@ -352,12 +362,16 @@ a:hover {
           flex: 1;
 }
 
-.content {
+.welcome-header {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  background: url("../img/logo-gray.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 200px 0;
 }
 
 .product-link {
@@ -375,5 +389,69 @@ a:hover {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+/* PAGE - iPhone */
+h2.product-type {
+  color: #FF3B30;
+  font-size: 2em;
+}
+
+.product-row {
+  -webkit-box-flex: 1.5;
+      -ms-flex: 1.5;
+          flex: 1.5;
+}
+
+.product-img-row {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.product-content {
+  background: -webkit-gradient(linear, left top, right top, from(#F2F2F2), to(#FFFFFF));
+  background: linear-gradient(to right, #F2F2F2, #FFFFFF);
+  padding: 80px 120px 80px 80px;
+}
+
+.product-content h1 {
+  font-weight: 700;
+}
+
+.product-content p {
+  font-size: 1.5em;
+  color: #999999;
+  line-height: 1.5em;
+}
+
+.product-price {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 80px;
+}
+
+.product-price h3.price {
+  color: #CCCCCC;
+  font-weight: 800;
+  font-size: 3em;
+}
+
+.product-price span.buy-now {
+  color: #FF3B30;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.product-slider {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 40px;
+}
+
+.product-slider img:first-of-type {
+  margin-right: 20px;
 }
 /*# sourceMappingURL=App.css.map */

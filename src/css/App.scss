@@ -3,7 +3,7 @@
 $break-small: 516px;
 $break-large: 1366px;
 
-$color-red: #FF0000;
+$color-accent: #FF3B30;
 $color-primary: #5AC8FA;
 $color-gray: #707070;
 $color-error: #fdcfcf;
@@ -54,20 +54,28 @@ body {
     text-align: right;
 }
 
-.grid-row {
+/* flexbox classes */
+
+.flex {
+    display: flex;
+}
+
+.flex-grid-row {
     display: flex;
     flex-direction: row;
 }
 
-.grid-col {
+.flex-grid-col {
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
+.align-bottom {
+    align-items: flex-end;
+}
 
-
-/* typography */
+/* General Typography */
 
 h1 {
     font-weight: 800;
@@ -88,7 +96,7 @@ a {
     }
 }
 
-/* sign-up & sign-in form styles */
+/* PAGE - signup & signin */
 
 .form-container {
     background: $gradient-primary;
@@ -151,9 +159,7 @@ a {
     padding: 12px 0;
 }
 
-/* Landing Page */
-
-
+/* PAGE - Landing */
 
 .landing-container {
     padding: 5px;
@@ -190,17 +196,17 @@ a {
         
         h1 {
             font-weight: 700;
-            letter-spacing: 0.5em;
         }
 
         /* override odometer.js font style */
         .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
             font-family: $font-stack;
+            letter-spacing: 0.5em;
         }
     }
 }
 
-/* Navbar */
+/* COMPONENT - Navbar */
 
 .logo {
     background-color: #000000;
@@ -280,21 +286,22 @@ a {
     }
 }
 
-/* Product Icons */
-.product-icons {
+/* COMPONENT - Product Icons */
+
+.product-icons, .product-icons a {
     img {
         margin-right: 40px;
         height: 30px;
-
-        &:last-of-type {
-            margin-right: 0;
-        }
     }
 }
 
-/* Welcome */
+.product-icons { 
+    margin-right: -40px;
+}
 
-.nav-col {
+/* PAGE - Welcome */
+
+.col-nav {
     height: 60px;
 
     @media screen and (min-width: $break-small) {
@@ -302,25 +309,27 @@ a {
     }
 }
 
-.content-col {
+.col-content {
     flex: 1;
-    background: $gradient-light;
-
     @media screen and (min-width: $break-small) {
         margin-left: 100px;
     }
 }
 
-.gutter {
-    flex: 0 0 100px;
+.welcome-content {
+    background: $gradient-light;
 }
 
 .content-wrapper {
     flex: 1;
 }
 
-.content {
+.welcome-header {
     @include position-center(50%);
+    background: url('../img/logo-gray.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 200px 0;
 }
 
 .product-link {
@@ -332,7 +341,64 @@ a {
     @include position-center(80%);
 }
 
+/* PAGE - iPhone */
 
+
+h2.product-type {
+    color: $color-accent;
+    font-size: 2em;
+}
+
+.product-row {
+    flex: 1.5;
+}
+
+.product-img-row {
+    flex: 1;
+}
+
+.product-content {
+    background: $gradient-light;
+    padding: 80px 120px 80px 80px;
+
+    h1 {
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.5em;
+        color: #999999;
+        line-height: 1.5em;
+    }
+}
+
+.product-price {
+    flex: 1;
+    padding: 80px;
+
+    h3.price {
+        color: #CCCCCC;
+        font-weight: 800;
+        font-size: 3em;
+    }
+
+    span.buy-now {
+        color: $color-accent;
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+}
+
+.product-slider {
+    flex: 1;
+    padding: 40px;
+
+    img {
+        &:first-of-type {
+            margin-right: 20px;
+        }
+    }
+}
 
 
 
