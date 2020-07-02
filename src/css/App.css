@@ -400,10 +400,22 @@ h2.product-type {
           flex: 1;
 }
 
+.shipping {
+  display: inline-block;
+  padding: 10px 0;
+  color: #FF3B30;
+}
+
 .product-content {
   background: -webkit-gradient(linear, left top, right top, from(#F2F2F2), to(#FFFFFF));
   background: linear-gradient(to right, #F2F2F2, #FFFFFF);
-  padding: 80px 120px 80px 80px;
+  padding: 30px;
+}
+
+@media screen and (min-width: 516px) {
+  .product-content {
+    padding: 80px 120px 80px 80px;
+  }
 }
 
 .product-content h1 {
@@ -440,10 +452,28 @@ h2.product-type {
       -ms-flex: 1;
           flex: 1;
   padding: 40px;
+  text-align: center;
+}
+
+.product-slider img {
+  width: 80px;
 }
 
 .product-slider img:first-of-type {
   margin-right: 20px;
+}
+
+.slider-track {
+  background-color: #EEE;
+  height: 8px;
+  width: 150px;
+  margin: 20px auto;
+}
+
+.slider {
+  height: 8px;
+  width: 50%;
+  background-color: #FF3B30;
 }
 
 /* helps display animations properly */

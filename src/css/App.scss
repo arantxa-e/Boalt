@@ -350,9 +350,19 @@ h2.product-type {
     flex: 1;
 }
 
+.shipping {
+    display: inline-block;
+    padding: 10px 0;
+    color: $color-accent;
+}
+
 .product-content {
     background: $gradient-light;
-    padding: 80px 120px 80px 80px;
+    padding: 30px;
+
+    @media screen and (min-width: $break-small) {
+        padding: 80px 120px 80px 80px;
+    }
 
     h1 {
         font-weight: 700;
@@ -385,12 +395,27 @@ h2.product-type {
 .product-slider {
     flex: 1;
     padding: 40px;
+    text-align: center;
 
     img {
+        width: 80px;
         &:first-of-type {
             margin-right: 20px;
         }
     }
+}
+
+.slider-track {
+    background-color: #EEE;
+    height: 8px;
+    width: 150px;
+    margin: 20px auto;
+}
+
+.slider {
+    height: 8px;
+    width: 50%;
+    background-color: $color-accent;
 }
 
 /* helps display animations properly */
