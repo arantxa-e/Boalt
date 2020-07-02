@@ -5,13 +5,13 @@
           box-sizing: border-box;
 }
 
-body {
+body, input, button {
   font-size: 13px;
   font-family: "Poppins", sans-serif;
 }
 
 @media screen and (min-width: 516px) {
-  body {
+  body, input, button {
     font-size: 16px;
   }
 }
@@ -164,16 +164,6 @@ a:hover {
 }
 
 /* PAGE - Landing */
-.landing-container {
-  padding: 5px;
-}
-
-@media screen and (min-width: 1366px) {
-  .landing-container {
-    padding: 5px 40px;
-  }
-}
-
 .landing-wrapper {
   height: 80vh;
   background-image: url("../img/logo.png"), -webkit-gradient(linear, left top, left bottom, from(#5AC8FA), to(#FFFFFF));
@@ -181,7 +171,7 @@ a:hover {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   /* landing page tagline */
   /* landing page year */
 }
@@ -232,6 +222,7 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 100;
 }
 
 .logo.full {
@@ -453,5 +444,17 @@ h2.product-type {
 
 .product-slider img:first-of-type {
   margin-right: 20px;
+}
+
+/* helps display animations properly */
+.router-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.animation-wrapper {
+  position: absolute;
+  width: 100%;
+  overflow-x: hidden;
 }
 /*# sourceMappingURL=App.css.map */

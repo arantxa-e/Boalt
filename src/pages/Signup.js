@@ -1,11 +1,13 @@
-import React, { useContext, useState } from "react";
-import { Link, Redirect } from 'react-router-dom';
-import { UserContext } from '../context/UserContext';
-import * as EmailValidator from 'email-validator';
-import passwordValidator from 'password-validator';
-import uniqid from 'uniqid';
-import Error from '../components/Error';
-import Success from '../components/Success';
+import React, { useContext, useState } from "react"
+import { Link, Redirect } from 'react-router-dom'
+import { motion } from "framer-motion"
+import { VariantPageSlideRight, TransitionLinear } from '../PageTransitions'
+import { UserContext } from '../context/UserContext'
+import * as EmailValidator from 'email-validator'
+import passwordValidator from 'password-validator'
+import uniqid from 'uniqid'
+import Error from '../components/Error'
+import Success from '../components/Success'
 
 const Signup = () => {
     /* context and state hooks */
@@ -72,32 +74,40 @@ const Signup = () => {
     }
 
   return (
-    <div className="form-container">
-        <div className="form-wrapper">
-            <form>
-                <h1 className="small text-center">Sign-Up</h1>
-                <label htmlFor="name">Full Name</label>
-                <input id="name" type="text" placeholder="John Doe" onChange={(e) => setName(e.target.value)} />
-                <label htmlFor="email">Email</label>
-                <input id="email" type="email" placeholder="user@email.com" onChange={(e) => setEmail(e.target.value)} />
-                <label htmlFor="password">Password</label>
-                <input type="password" placeholder="password" onChange={(e) => setPass(e.target.value)} />
-                <button type="submit" onClick={handleSubmit}>Sign-Up</button>
+    <div className="animation-wrapper">
 
-                { error ? <Error msg={error} /> : '' }
-                { success ? <Success msg={success} /> : '' }
-                { redirect ? <Redirect to="/" /> : '' }
-            </form>
-            <div className="form-footer">
-                Already registered? <Link to="/">Sign-in</Link>
+        <motion.div
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={VariantPageSlideRight}
+        transition={TransitionLinear}>
+            <div
+            className="form-container">
+                <div className="form-wrapper">
+
+                <form>
+                    <h1 className="small text-center">Sign-Up</h1>
+                    <label htmlFor="name">Full Name</label>
+                    <input id="name" type="text" placeholder="John Doe" onChange={(e) => setName(e.target.value)} />
+                    <label htmlFor="email">Email</label>
+                    <input id="email" type="email" placeholder="user@email.com" onChange={(e) => setEmail(e.target.value)} />
+                    <label htmlFor="password">Password</label>
+                    <input type="password" placeholder="password" onChange={(e) => setPass(e.target.value)} />
+                    <button type="submit" onClick={handleSubmit}>Sign-Up</button>
+
+                    { error ? <Error msg={error} /> : '' }
+                    { success ? <Success msg={success} /> : '' }
+                    { redirect ? <Redirect to="/" /> : '' }
+                </form>
+                <div className="form-footer">
+                    Already registered? <Link to="/">Sign-in</Link>
+                </div>
+
+                </div>
             </div>
-
-            <h2>All users (testing, delete)</h2>
-            <ul>
-                {users.map((user) => (<li key={user.key}>{user.name}</li>))}
-            </ul>
+        </motion.div>
         </div>
-    </div>
   );
 }
 

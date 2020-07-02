@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, Redirect } from 'react-router-dom';
+import { motion } from "framer-motion"
+import { VariantPageSlideLeft, TransitionLinear } from '../PageTransitions'
 import { UserContext } from '../context/UserContext';
 import Error from '../components/Error';
 
@@ -45,8 +47,19 @@ const Signin = () => {
   }
 
   return (
+    <div className="animation-wrapper">
+    <motion.div 
+    initial="out"
+    animate="in"
+    exit="out"
+    variants={VariantPageSlideLeft}
+    transition={TransitionLinear}>
+
+
+
     <div className="form-container">
       <div className="form-wrapper">
+
           <form>
             <h1 className="small">Sign-In</h1>
             <label htmlForr="email">Email</label>
@@ -61,8 +74,14 @@ const Signin = () => {
           <div className="form-footer text-right">
             Not registered? <Link to="/signup">Sign-up</Link>
           </div>
+
       </div>
-    </div>
+      </div>
+
+ 
+      </motion.div>
+      </div>
+
   );
 }
 
