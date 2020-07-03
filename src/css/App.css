@@ -40,6 +40,8 @@ body, input, button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .flex-grid-col {
@@ -166,14 +168,21 @@ a:hover {
 /* PAGE - Landing */
 .landing-wrapper {
   height: 80vh;
-  background-image: url("../img/logo.png"), -webkit-gradient(linear, left top, left bottom, from(#5AC8FA), to(#FFFFFF));
-  background-image: url("../img/logo.png"), linear-gradient(#5AC8FA, #FFFFFF);
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5AC8FA), to(#FFFFFF));
+  background-image: linear-gradient(#5AC8FA, #FFFFFF);
+  background-color: #FFF;
   position: relative;
   overflow: hidden;
   /* landing page tagline */
   /* landing page year */
+}
+
+.landing-wrapper img.white-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-60%);
+          transform: translateX(-50%) translateY(-60%);
 }
 
 .landing-wrapper .landing-tagline {
@@ -319,6 +328,27 @@ a:hover {
   margin-right: -40px;
 }
 
+.product-icons.fixed {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 100px;
+  z-index: 10;
+}
+
+@media screen and (max-width: 1366px) {
+  .product-icons.fixed {
+    display: none;
+  }
+}
+
+.product-icons.fixed * {
+  margin: 20px auto;
+  text-align: center;
+  display: block;
+}
+
 /* PAGE - Welcome */
 .col-nav {
   height: 60px;
@@ -336,7 +366,7 @@ a:hover {
           flex: 1;
 }
 
-@media screen and (min-width: 516px) {
+@media screen and (min-width: 1366px) {
   .col-content {
     margin-left: 100px;
   }
@@ -363,6 +393,7 @@ a:hover {
   background-position: center;
   background-repeat: no-repeat;
   padding: 200px 0;
+  width: 90%;
 }
 
 .product-link {
@@ -398,6 +429,15 @@ h2.product-type {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+@media screen and (min-width: 516px) {
+  .product-img-row {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
 }
 
 .shipping {
@@ -409,13 +449,24 @@ h2.product-type {
 .product-content {
   background: -webkit-gradient(linear, left top, right top, from(#F2F2F2), to(#FFFFFF));
   background: linear-gradient(to right, #F2F2F2, #FFFFFF);
-  padding: 30px;
+  padding: 10px;
+  position: relative;
 }
 
 @media screen and (min-width: 516px) {
   .product-content {
-    padding: 80px 120px 80px 80px;
+    padding: 70px 120px 70px 70px;
   }
+}
+
+.product-content img {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 180px;
+  z-index: 0;
 }
 
 .product-content h1 {
@@ -428,11 +479,21 @@ h2.product-type {
   line-height: 1.5em;
 }
 
+.product-content div {
+  z-index: 10;
+}
+
 .product-price {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 80px;
+  padding: 10px;
+}
+
+@media screen and (min-width: 516px) {
+  .product-price {
+    padding: 70px;
+  }
 }
 
 .product-price h3.price {
@@ -451,12 +512,22 @@ h2.product-type {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 40px;
   text-align: center;
+  padding: 10px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+@media screen and (min-width: 516px) {
+  .product-slider {
+    padding: 70px 0;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
 }
 
 .product-slider img {
-  width: 80px;
+  width: 90px;
 }
 
 .product-slider img:first-of-type {

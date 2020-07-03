@@ -5,6 +5,7 @@ import { VariantExitFade, VariantSlideDown, VariantSlideShrink, VariantFadeIn, V
 import Odometer from 'react-odometerjs'
 import '../css/odometer-theme-default.css'
 import Logo from '../components/Logo'
+import WhiteLogo from '../img/logo.png'
 
 const Landing = () => {
     /* trigger odometer.js animation by transitioning the year from 1000 to 2019 */
@@ -18,7 +19,8 @@ const Landing = () => {
             animate="initial"
             exit="out"
             variants={VariantExitFade}
-            transition={TransitionLinear}>
+            transition={TransitionLinear}
+            style={{position: "relative"}}>
                 <Link to="/welcome">
                     <motion.div
                     initial="initial"
@@ -34,6 +36,7 @@ const Landing = () => {
                     transition={TransitionLinearSlow}>
                         <div className="landing-container">
                             <div className="landing-wrapper">
+                            <img src={WhiteLogo} alt="Apple" className="white-logo" />
                                 <div className="landing-tagline">
                                     <motion.div 
                                     initial="initial"

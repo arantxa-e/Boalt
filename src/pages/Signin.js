@@ -48,39 +48,31 @@ const Signin = () => {
 
   return (
     <div className="animation-wrapper">
-    <motion.div 
-    initial="out"
-    animate="in"
-    exit="out"
-    variants={VariantPageSlideLeft}
-    transition={TransitionLinear}>
-
-
-
-    <div className="form-container">
-      <div className="form-wrapper">
-
-          <form>
-            <h1 className="small">Sign-In</h1>
-            <label htmlForr="email">Email</label>
-            <input id="email" type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />
-            <label htmlForr="password">Password</label>
-            <input id="password" type="password" placeholder="password" onChange={(e) => setPass(e.target.value)} />
-            <button onClick={handleSubmit}>Sign-In</button>
-
-            { error ? <Error msg={error} /> : '' }
-            { redirect ? <Redirect to="/landing" /> : '' }
-          </form>
-          <div className="form-footer text-right">
-            Not registered? <Link to="/signup">Sign-up</Link>
+      <motion.div 
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={VariantPageSlideLeft}
+      transition={TransitionLinear}>
+        <div className="form-container">
+          <div className="form-wrapper">
+              <form>
+                <h1 className="small">Sign-In</h1>
+                <label htmlForr="email">Email</label>
+                <input id="email" type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />
+                <label htmlForr="password">Password</label>
+                <input id="password" type="password" placeholder="password" onChange={(e) => setPass(e.target.value)} />
+                <button onClick={handleSubmit}>Sign-In</button>
+                { error ? <Error msg={error} /> : '' }
+                { redirect ? <Redirect to="/landing" /> : '' }
+              </form>
+              <div className="form-footer text-right">
+                Not registered? <Link to="/signup">Sign-up</Link>
+              </div>
           </div>
-
-      </div>
-      </div>
-
- 
+        </div>
       </motion.div>
-      </div>
+    </div>
 
   );
 }

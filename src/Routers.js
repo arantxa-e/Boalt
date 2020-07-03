@@ -8,10 +8,9 @@ import Signup from './pages/Signup';
 import Landing from './pages/Landing';
 import Welcome from './pages/Welcome';
 import Phone from './pages/Phone';
-import MacBook from './pages/MacBook';
-import Watch from './pages/Watch';
 
 const Routers = () => {
+    /* useLocation hook keeps track of when components mount/unmount for transition animations */
     const location = useLocation();
 
     return(
@@ -21,8 +20,6 @@ const Routers = () => {
                 <PrivateRoute path="/landing" component={Landing} />
                 <PrivateRoute path="/welcome" component={Welcome} />
                 <PrivateRoute path="/iphone" component={Phone} />
-                <PrivateRoute path="/macbook" component={MacBook} />
-                <PrivateRoute path="/watch" component={Watch} />
                 <Route exact path="/" component={Signin} />
             </Switch>
         </AnimatePresence>

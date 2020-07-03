@@ -14,8 +14,8 @@ const Navbar = (props) => {
                 
                 <div className="nav-links">
                     <Link to="iphone" className={ props.active === 'iphone' ? 'focus' : null }>iPhone</Link>
-                    <Link to="macbook">MacBook Pro</Link>
-                    <Link to="watch">Watch</Link>
+                    <Link to="iphone">MacBook Pro</Link>
+                    <Link to="iphone">Watch</Link>
                     <button className="cta">Notify Me</button>
                 </div>
             </div>

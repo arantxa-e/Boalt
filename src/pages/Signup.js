@@ -12,7 +12,6 @@ import Success from '../components/Success'
 const Signup = () => {
     /* context and state hooks */
     const { users, setUsers } = useContext(UserContext);
-
     const [ name, setName ] = useState("");
     const [ email, setEmail ] = useState("");
     const [ pass, setPass ] = useState("");
@@ -75,17 +74,14 @@ const Signup = () => {
 
   return (
     <div className="animation-wrapper">
-
         <motion.div
         initial="out"
         animate="in"
         exit="out"
         variants={VariantPageSlideRight}
         transition={TransitionLinear}>
-            <div
-            className="form-container">
+            <div className="form-container">
                 <div className="form-wrapper">
-
                 <form>
                     <h1 className="small text-center">Sign-Up</h1>
                     <label htmlFor="name">Full Name</label>
@@ -103,11 +99,10 @@ const Signup = () => {
                 <div className="form-footer">
                     Already registered? <Link to="/">Sign-in</Link>
                 </div>
-
                 </div>
             </div>
         </motion.div>
-        </div>
+    </div>
   );
 }
 

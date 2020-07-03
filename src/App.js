@@ -7,14 +7,15 @@ import './css/App.css'
 
 const App = () => {
   const [ users, setUsers ] = useState([
-      {
+      {   /* test user */
           key: uniqid(),
-          name: "Arantxa Edwards",
-          email: "aedwardsglass@gmail.com",
+          name: "user",
+          email: "user@email.com",
           password: "password"
       }
   ]);
 
+  /* retrieves session from local storage if there is one */
   const [ isAuthenticated, setIsAuthenticated ] = useState(localStorage.getItem("authorized"));
 
   return (

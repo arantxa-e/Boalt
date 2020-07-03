@@ -63,6 +63,7 @@ body, input, button {
 .flex-grid-row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .flex-grid-col {
@@ -163,13 +164,20 @@ a {
 
 .landing-wrapper {
     height: 80vh;
-    background-image: url('../img/logo.png'), $gradient-primary;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: $gradient-primary;
+    background-color: #FFF;
     position: relative;
     overflow: hidden;
 
+    img.white-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-60%);
+    }
+
     /* landing page tagline */
+
     .landing-tagline {
         @include position-center(50%);
         width: 100%;
@@ -178,10 +186,10 @@ a {
             font-weight: 600;
             color: #000000;
         }
-
     }
 
     /* landing page year */
+
     .landing-year {
         @include position-center(85%);
         width: 100%;
@@ -191,6 +199,7 @@ a {
         }
 
         /* override odometer.js font style */
+        
         .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
             font-family: $font-stack;
             letter-spacing: 0.5em;
@@ -290,6 +299,25 @@ a {
 
 .product-icons { 
     margin-right: -40px;
+
+    &.fixed {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 100px;
+        z-index: 10;
+
+        @media screen and (max-width: $break-large) {
+            display: none;
+        }
+    }
+
+    &.fixed * {
+        margin: 20px auto;
+        text-align: center;
+        display: block;
+
+    }
 }
 
 /* PAGE - Welcome */
@@ -304,7 +332,7 @@ a {
 
 .col-content {
     flex: 1;
-    @media screen and (min-width: $break-small) {
+    @media screen and (min-width: $break-large) {
         margin-left: 100px;
     }
 }
@@ -323,6 +351,7 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     padding: 200px 0;
+    width: 90%;
 }
 
 .product-link {
@@ -336,7 +365,6 @@ a {
 
 /* PAGE - iPhone */
 
-
 h2.product-type {
     color: $color-accent;
     font-size: 2em;
@@ -348,6 +376,11 @@ h2.product-type {
 
 .product-img-row {
     flex: 1;
+    flex-basis: 100%;
+
+    @media screen and (min-width: $break-small) {
+        flex-basis: auto;
+    }
 }
 
 .shipping {
@@ -358,10 +391,20 @@ h2.product-type {
 
 .product-content {
     background: $gradient-light;
-    padding: 30px;
+    padding: 10px;
+    position: relative;
 
     @media screen and (min-width: $break-small) {
-        padding: 80px 120px 80px 80px;
+        padding: 70px 120px 70px 70px;
+    }
+
+    img {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 180px;
+        z-index: 0;
     }
 
     h1 {
@@ -373,11 +416,19 @@ h2.product-type {
         color: #999999;
         line-height: 1.5em;
     }
+
+    div {
+        z-index: 10;
+    }
 }
 
 .product-price {
     flex: 1;
-    padding: 80px;
+    padding: 10px;
+
+    @media screen and (min-width: $break-small) {
+        padding: 70px;
+    }
 
     h3.price {
         color: #CCCCCC;
@@ -394,11 +445,17 @@ h2.product-type {
 
 .product-slider {
     flex: 1;
-    padding: 40px;
     text-align: center;
+    padding: 10px;
+    flex-basis: 100%;
+
+    @media screen and (min-width: $break-small) {
+        padding: 70px 0;
+        flex-basis: auto;
+    }
 
     img {
-        width: 80px;
+        width: 90px;
         &:first-of-type {
             margin-right: 20px;
         }
